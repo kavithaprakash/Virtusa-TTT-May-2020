@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ <!-- with autowire -->
+<!--  
+<bean id ="wallpay" class="com.virtusa.day2.Paymentdetails.WalletPayment"> 
+<property name="customername" value="kavitha"></property>
+</bean>
+
+<bean id ="upipay" class="com.virtusa.day2.Paymentdetails.UPIPayment"> 
+<property name="name" value="Rachu"></property>
+</bean>
+<bean id ="pay" class="com.virtusa.day2.Paymentdetails.Paym" autowire="byName" >
+
+</bean>
+-->
+
+<!-- without autowire -->
+
+<bean id ="wall" class="com.virtusa.day2.Paymentdetails.WalletPayment"> 
+<property name="customername" value="kavitha"></property>
+</bean>
+
+<bean id ="upipay" class="com.virtusa.day2.Paymentdetails.UPIPayment"> 
+<property name="name" value="Rachu"></property>
+</bean>
+<bean id ="pay" class="com.virtusa.day2.Paymentdetails.Paym" >
+<property name="upipay" ref="upipay"></property>
+<property name="wallpay" ref="wall"></property>
+</bean>
+
+
+
+</beans>
