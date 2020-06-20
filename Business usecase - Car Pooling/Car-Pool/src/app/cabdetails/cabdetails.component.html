@@ -1,0 +1,44 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Cab List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+           
+          <tr>
+            <th>cid</th>
+            <th>drivername</th>
+            <th> vacantSpace</th>
+            <th>carType</th>
+            <th>source</th>
+            <th> destination</th>
+            <th> driverMobe</th>
+            <th>booked Status</th>
+            <th>Total amount </th>
+            <th>Amount to Pay</th>
+            <th> date</th>
+          </tr>
+        </thead>
+        <tbody>
+                     <tr *ngFor="let c of cab | async">
+            <td>{{c.cid}}</td>
+            <td>{{c.driverName}}</td>
+            <td>{{c.vacantSpace}}</td>
+            <td>{{c.carType}}</td>
+            <td>{{c.source}}</td>
+            <td>{{c.destination}}</td>
+            <td>{{c.driverMob}}</td>
+            <td>{{c.booked}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.amountToPay}}</td>
+            <td>{{c.date}}</td>
+           <td><button (click)="requestride(c.cid)"  class="btn btn-info">Request for a ride</button>
+         <!--   <td><button (click)="requestride()" *ngIf="tripstatus=='x'" class="btn btn-danger">Request Pending</button>-->
+              <!--  <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+              --> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

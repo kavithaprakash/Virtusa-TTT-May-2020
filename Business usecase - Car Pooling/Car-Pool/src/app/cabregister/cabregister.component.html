@@ -1,0 +1,61 @@
+
+
+<h3>Register your Car details</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <label for="name">Cab ID</label>
+      <input type="text" class="form-control" id="cabid" required [(ngModel)]="cab.cid" name="cabid">
+    </div>
+
+
+    <div class="form-group">
+      <label for="name">Driver Name</label>
+      <input type="text" class="form-control" id="driverName" required [(ngModel)]="cab.driverName" name="driverName">
+    </div>
+    <div class="form-group">
+      <label for="name">Mobile No to Contact</label>
+      <input type="text" class="form-control" id="driverMob" required [(ngModel)]="cab.driverMob" name=" driverMob">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Vacant Space</label>
+        <input type="text" class="form-control" id="vacantSpace" required [(ngModel)]="cab.vacantSpace" name="vacantSpace">
+      </div>
+
+    <div class="form-group">
+      <label for="name">Car Type</label>
+      <input type="text" class="form-control" id=" carType" required [(ngModel)]="cab.carType" name=" carType">
+    </div>
+
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" class="form-control" id=" date" required [(ngModel)]="cab.date" name=" date">
+      </div>
+     
+    <label for="singleSelect"> Source </label>
+    <select name="singleSelect" ng-model="data.singleSelect"required [(ngModel)]="cab.source">
+      <option value="Thambaram">Thambaram</option>
+      <option value="Guindy">Guindy</option>
+      <option value="Avadi">Avadi</option>
+    </select><br>
+   
+
+    <label for="singleSelect"> Destination </label>
+    <select name="singleSelect" ng-model="data.singleSelect"required [(ngModel)]="cab.destination">
+      <option value="Thambaram">Thambaram</option>
+      <option value="Guindy">Guindy</option>
+      <option value="Avadi">Avadi</option>
+    </select><br>
+   
+   
+
+
+     
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+
+

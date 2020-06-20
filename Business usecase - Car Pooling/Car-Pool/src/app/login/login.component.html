@@ -1,0 +1,31 @@
+
+
+
+<div [hidden]="submitted" style="width: 400px;">
+  <h1 align="center">Login to view or register for Ride</h1>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+     
+    <div class="form-group">
+      <label for="name">User ID</label>
+      <input type="text" class="form-control" id="id" required [(ngModel)]="employee.id" name="id">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Password</label>
+        <input type="text" class="form-control" id="password" required [(ngModel)]="employee.password" name="password">
+      </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+<!--
+<div [hidden]="!submitted">
+ <h1> {{validuser}}</h1>
+  <h4>You submitted successfully!</h4>
+   <button class="btn btn-success" (click)="newEmployee()">Add</button>
+</div>
+ -->
+

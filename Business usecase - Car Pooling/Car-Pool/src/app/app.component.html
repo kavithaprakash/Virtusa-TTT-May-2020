@@ -1,0 +1,66 @@
+
+<!--
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  
+  <h2 style="text-align: center;">{{title}}</h2>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+        <a routerLink="employees" class="nav-link" routerLinkActive="active">Employee List</a>
+    </li>
+    <li class="nav-item">
+        <a routerLink="add" class="nav-link" routerLinkActive="active">Add Employee</a>
+    </li>
+  </ul>
+</nav> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Car pooling</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-light " style="background-color: #228B22;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand "  href="https://www.virtusa.com/">Virtusa home page</a>
+      </div>
+ <!--<a routerLink="about" class="nav navbar-nav" class="nav-link" routerLinkActive="active" class="text-white">about</a>
+               
+ -->
+ <a routerLink="img" class="nav navbar-nav text-white" routerLinkActive="active">About</a>
+      
+ 
+
+ <a routerLink="map" class="nav navbar-nav navbar-right" class="text-white" routerLinkActive="active">GoogleMap</a>
+ 
+        <a  routerLink="register" class="nav navbar-nav navbar-right" class="text-white" routerLinkActive="active">
+          <span class="glyphicon glyphicon-user">Sign Up </span>  </a>
+        <a  routerLink="login" routerLinkActive="active"  class="nav navbar-nav navbar-right"  class="text-white">
+          <span class="glyphicon glyphicon-log-in"> Login/logout</span></a>
+          </div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+    <div class="card-body">
+    <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

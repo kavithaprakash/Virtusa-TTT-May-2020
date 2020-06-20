@@ -1,0 +1,8 @@
+<p>map works!</p><head> 
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB2K78_-wb82Q-f5WBhl33rC9jW4CTj_nc"> </script>
+</head>
+
+<agm-map [(latitude)]="location.lat" [(longitude)]="location.lng" [(zoom)]="location.zoom" [disableDefaultUI]="true" [zoomControl]="true" [(fitBounds)]='location.viewport'>
+  <agm-marker [(latitude)]="location.marker.lat" [(longitude)]="location.marker.lng" [markerDraggable]="location.marker.draggable" (dragEnd)="true"></agm-marker>
+</agm-map>
+ 

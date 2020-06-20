@@ -1,0 +1,90 @@
+
+
+
+<h3>Register your details </h3>
+<div class="container"  style="width: 400px;">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"  >
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input 
+      formControlName="firstName"  
+      type="text" 
+      class="form-control" 
+      id="firstName" 
+      placeholder="First Name"
+      required [(ngModel)]="employee.firstName" name="firstName">
+    
+      <div *ngIf="f.firstName.touched && f.firstName.invalid" class="alert alert-danger">
+        <div *ngIf="f.firstName.errors.required">name is required.</div>
+         <div *ngIf="f.firstName.errors.pattern">Enter  only characters</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="name">Last Name</label>
+      <input   
+      type="text" 
+      formControlName="lastName" 
+      class="form-control" 
+      id="lastName" 
+      placeholder="Last Name"
+      required [(ngModel)]="employee.lastName" name="lastName">
+      <div *ngIf="f.lastName.touched && f.lastName.invalid" class="alert alert-danger">
+        <div *ngIf="f.lastName.errors.required">name is required.</div>
+         <div *ngIf="f.lastName.errors.pattern">Enter only charcters</div>
+      </div>
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="name">password - Minimum eight characters</label>
+      <input type="text" 
+      class="form-control" 
+      id="password" 
+      formControlName="password"
+      placeholder="Enter password"
+      required [(ngModel)]="employee.password" 
+      name="password">
+       
+      <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+        <div *ngIf="f.password.errors.required">Password should not be empty</div>
+        <div *ngIf="f.password.errors.pattern">Please enter char & number</div>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+       <label for="phoneno">phone No</label>
+       <input 
+       type="text" 
+       class="form-control" 
+       formControlName="phoneno"
+       id="phoneno" 
+       placeholder="Enter Phone Number"
+       required [(ngModel)]="employee.phoneno" name="phoneno">
+       <div *ngIf="f.phoneno.touched && f.phoneno.invalid" class="alert alert-danger">
+          <div *ngIf="f.phoneno.errors.required">Phone No should not be empty </div>
+          <div *ngIf="f.phoneno.errors.pattern">Please enter valid phone numbers</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">E-mail id</label>
+        <input type="text"       
+         formControlName="emailId"
+         placeholder="Please Enter Valid E-mail id"
+         class="form-control" id="emailId" required [(ngModel)]="employee.emailId" name="emailId">
+         <div *ngIf="f.emailId.touched && f.emailId.invalid" class="alert alert-danger">
+          <div *ngIf="f.emailId.errors.required">Email id is required</div>
+          <div *ngIf="f.emailId.errors.pattern">Please enter valid email id</div>
+        </div>
+       </div>
+
+
+
+  <button class="btn btn-primary" type="submit" 
+    [disabled]="!registerForm.valid">Submit</button>
+  </form>
+</div>

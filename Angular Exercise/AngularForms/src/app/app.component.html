@@ -1,0 +1,51 @@
+<p> {{date}}</p>
+
+
+<label>Country</label>
+<div  title="Please select the country ">
+    <select placeholder="India" (change)="changeCountry($event.target.value)">
+        <option *ngFor ="let count of countryList">{{count.name}} </option>
+    </select>
+</div>
+
+<br>
+<label>states</label>
+<div title="Please select the city ">
+    <select placeholder="Tamil Nadu">
+        <option *ngFor ="let state of states">{{state}} </option>
+  </select>
+</div>
+
+<div class="container">
+  <h1>Phone number to validate</h1>
+    
+  <form [formGroup]="form" (ngSubmit)="submit()">
+        
+      <div class="form-group">
+          <label for="mobileNumber">Mobile Number</label>
+          <input 
+              formControlName="mobileNumber"
+              id="mobileNumber" 
+              type="text" 
+              class="form-control">
+          <div *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid" class="alert alert-danger">
+              <div *ngIf="f.mobileNumber.errors.required">Mobile Number is required.</div>
+              <div *ngIf="f.mobileNumber.errors.pattern">Please, Enter 10 digit Mobile Number.</div>
+          </div>
+      </div>
+    
+
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input formControlName="name"
+            id="name" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+            <div *ngIf="f.name.errors.required">name is required.</div>
+            <div *ngIf="f.name.errors.pattern">Please, char.</div>
+        </div>
+    </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
